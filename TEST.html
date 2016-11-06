@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CHCWCUP REGISTER</title>
+    <style>
+      body{
+        background-color: #263238;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAjdarRIsUshhdQOwaFLxlBneFWz12JrTU",
+        authDomain: "chcwcup.firebaseapp.com",
+        databaseURL: "https://chcwcup.firebaseio.com",
+        storageBucket: "chcwcup.appspot.com",
+        messagingSenderId: "870919912355"
+      };
+      firebase.initializeApp(config);
+
+      var database = firebase.database();
+
+      function writeUserData(userId, name, email, imageUrl) {
+        console.log(firebase.database().ref('users/' + userId).set({
+          username: name,
+          email: email,
+          profile_picture : imageUrl
+        }));
+      }
+
+      writeUserData(3454, "aacczury", "yl931905@gmail.com", "http://i.imgur.com/rjDk6L1.jpg");
+    </script>
+  </body>
+</html>
