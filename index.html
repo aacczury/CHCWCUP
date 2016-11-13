@@ -8,39 +8,34 @@
         background-color: #263238;
       }
     </style>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css" />
   </head>
   <body>
 
 
     <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+    <script src="config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAjdarRIsUshhdQOwaFLxlBneFWz12JrTU",
-        authDomain: "chcwcup.firebaseapp.com",
-        databaseURL: "https://chcwcup.firebaseio.com",
-        storageBucket: "chcwcup.appspot.com",
-        messagingSenderId: "870919912355"
-      };
-      firebase.initializeApp(config);
+      
 
-      var database = firebase.database();
+      //var database = firebase.database();
 
-      function writeUserData(userId, name, email, imageUrl) {
-        firebase.database().ref('users/' + userId).set({
-          username: name,
-          email: email,
-          profile_picture : imageUrl
-        });
-      }
+      //function writeUserData(userId, name, email, imageUrl) {
+      //  firebase.database().ref('users/' + userId).set({
+      //    username: name,
+      //    email: email,
+      //    profile_picture : imageUrl
+      //  });
+      //}
 
-      //writeUserData(3454, "ack", "yl931905@gmail.com", "http://i.imgur.com/rjDk6L1.jpg");
-      //var userId = firebase.auth().currentUser.uid;
-      firebase.database().ref('/users/' + 3454).on('value', function(snapshot) {
-        console.log(snapshot.val());
-        // var username = snapshot.val().username;
-        // ...
-      });
+      ////writeUserData(3454, "ack", "yl931905@gmail.com", "http://i.imgur.com/rjDk6L1.jpg");
+      ////var userId = firebase.auth().currentUser.uid;
+      //firebase.database().ref('/users/' + 3454).on('value', function(snapshot) {
+      //  console.log(snapshot.val());
+      //  // var username = snapshot.val().username;
+      //  // ...
+      //});
     </script>
   </body>
 </html>
